@@ -1,0 +1,332 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "version": "1.0.0",
+        "title": "Contact API Project",
+        "description": "A minimal and easy to follow example of what you need to create a CRUD style web API in NodeJs using TypeScript.",
+        "termsOfService": "http://127:0.0.1:3000/terms/",
+        "contact": {
+            "email": "jsmith@domain.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "servers": [
+        {
+            "url": "https://127.0.0.1:3000/",
+            "description": "Local Dev SSL"
+        }
+    ],
+    "tags": [
+        {
+            "name": "Contact",
+            "description": "API for contacts in the system"
+        }
+    ],
+    "paths": {
+        "/contact": {
+            "get": {
+                "tags": [
+                    "Contact"
+                ],
+                "summary": "Get all the contacts in system",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Contacts"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Contact"
+                ],
+                "summary": "Create a new contact in the system",
+                "requestBody": {
+                    "description": "Contact Object",
+                    "content": {
+                        "application/json": {
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "firstName": {
+                                    "type": "string",
+                                    "example": "John"
+                                },
+                                "lastName": {
+                                    "type": "string",
+                                    "example": "Smith"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "example": "jsmith@domain.com"
+                                },
+                                "company": {
+                                    "type": "string",
+                                    "example": "Tech"
+                                },
+                                "phone": {
+                                    "type": "number",
+                                    "example": "1112223333"
+                                }
+                            }
+                        }
+                    }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/id"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Failed. Bad post data.",
+                        "content": {}
+                    }
+                }
+            }
+        },
+        "/contact/{id}": {
+            "description": "Returns a single contact",
+            "parameters": [
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "An existing contact id",
+                    "schema": {
+                        "type": "string"
+                    }
+                }
+            ],
+            "get": {
+                "tags": [
+                    "Contact"
+                ],
+                "summary": "Get contact with given id",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "description": "An existing contact id",
+                        "schema": {
+                            "$ref": "#/components/schemas/id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Contact"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Failed. Contact not found.",
+                        "content": {}
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Contact"
+                ],
+                "summary": "Update contact with given id",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "required": true,
+                        "description": "An existing contact id",
+                        "schema": {
+                            "$ref": "#/components/schemas/id"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Contact Object",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "firstName": {
+                                        "type": "string",
+                                        "example": "John"
+                                    },
+                                    "lastName": {
+                                        "type": "string",
+                                        "example": "Smith"
+                                    },
+                                    "email": {
+                                        "type": "string",
+                                        "example": "jsmith@domain.com"
+                                    },
+                                    "company": {
+                                        "type": "string",
+                                        "example": "Tech"
+                                    },
+                                    "phone": {
+                                        "type": "number",
+                                        "example": "1112223333"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Contact"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Failed. Bad post data.",
+                        "content": {}
+                    },
+                    "404": {
+                        "description": "Failed. Contact not found.",
+                        "content": {}
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Contact"
+                ],
+                "summary": "Delete contact with given id",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "An existing contact id",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/id"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Failed. Contact not found.",
+                        "content": {}
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "id": {
+                "type":"string",
+                "example": "5dd57f82c375ba468465cc6d"
+            },
+            "Contact": {
+                "type": "object",
+                "properties": {
+                    "id":{
+                        "type":"string",
+                        "example": "5dd57f82c375ba468465cc6d"
+                    },
+                    "firstName": {
+                        "type": "string",
+                        "example": "John"
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "example": "Smith"
+                    },
+                    "email": {
+                        "type": "string",
+                        "example": "jsmith@domain.com"
+                    },
+                    "company": {
+                        "type": "string",
+                        "example": "Tech"
+                    },
+                    "phone": {
+                        "type": "number",
+                        "example": "1112223333"
+                    },
+                    "createdDate": {
+                        "type": "string",
+                        "example": "11/20/2019, 1:01:38 PM"
+                    }
+                }
+            },
+            "Contacts": {
+                "type": "array",
+                "items": {
+                    "title": "Contact",
+                    "properties": {
+                        "id":{
+                            "type":"string",
+                            "example": "5dd57f82c375ba468465cc6d"
+                        },
+                        "firstName": {
+                            "type": "string",
+                            "example": "John"
+                        },
+                        "lastName": {
+                            "type": "string",
+                            "example": "Smith"
+                        },
+                        "email": {
+                            "type": "string",
+                            "example": "jsmith@domain.com"
+                        },
+                        "company": {
+                            "type": "string",
+                            "example": "Tech"
+                        },
+                        "phone": {
+                            "type": "number",
+                            "example": "1112223333"
+                        },
+                        "createdDate": {
+                            "type": "string",
+                            "example": "11/20/2019, 1:01:38 PM"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

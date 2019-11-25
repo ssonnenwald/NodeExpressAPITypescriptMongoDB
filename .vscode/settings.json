@@ -1,0 +1,6 @@
+{
+    "comment-ts.todoComments": true,
+    "comment-ts.includeAuthorTag": true,
+    "comment-ts.includeDescriptionTag": true
+   
+}
