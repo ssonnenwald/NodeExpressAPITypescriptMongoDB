@@ -123,3 +123,82 @@ Create a new collection in the database called **contacts**.![Create new collect
 ```typescript
 public mongoUrl: string = 'mongodb://localhost:27017/CRMdb';
 ```
+
+## Microsoft VSCode
+I am using vscode to edit and debug the application.
+
+### Extensions
+* Angular Snippets (Version 8)
+* Comments in Typescript
+* Debugger for Chrome
+* DotENV
+* ESLint
+* GitLens--Git supercharged
+* Markdown Preview Github Styling
+* Markdown Shortcuts
+* Markdown TOC
+* markdownlint
+* SQL Server (mssql)
+* SQLTools - Database tools
+* Swagger Viewer
+* TSLint
+
+## tsconfig.json
+```json
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "pretty": true,
+        "sourceMap": true,
+        "target": "es6",
+        "outDir": "./dist",
+        "baseUrl": "./lib"
+    },
+    "include": [
+        "lib/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "images"
+    ]
+}
+```
+
+This is the standard setup for a node project.  What I added in addition here is 
+```json
+"resolveJsonModule": true,
+```
+I added this so that my **lib/swagger.json** file would be picked up and validated against for my API documentation since I added swagger to the project.
+
+## launch.json
+```json
+"version": "0.2.0",
+"configurations": [
+    {
+        "name": "TS Node",
+        "type": "node",
+        "request": "launch",
+        "args": ["${workspaceRoot}/lib/server.ts"],
+        "runtimeArgs": [
+            "--nolazy",
+            "-r",
+            "ts-node/register"
+        ],
+        "sourceMaps": true,
+        "cwd": "${workspaceRoot}",
+        "protocol": "inspector",
+        "env": {
+            "NODE_ENV": "development",
+            "TS_NODE_PROJECT": "./tsconfig.json"
+        },
+        "serverReadyAction": {
+            "action": "debugWithChrome",
+            "pattern": "^\\s*Express server listening on port 3000\\s",
+            "uriFormat": "https://127.0.0.1:3000/swagger/"
+        }
+    }
+]
+```
+The **launch.json** file sets up the debugger in vscode so that you can launch and debug the API.  The first part of this starts and launches the API, but if you want to also start swagger along with this then **serverReadyAction** section is needed to startup chrome and display the swagger ui page.
