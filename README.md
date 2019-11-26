@@ -26,7 +26,7 @@ This API is an example I made to demostrate CRUD operation using a very simple c
 The first and foremost is that you should always use HTTPS over HTTP.
 
 For local testing, I will use [OpenSSL](https://slproweb.com/products/Win32OpenSSL.html) on Windows to generate the key and certificate 
-for HTTPS configuration.  The process is similar on Mac or Linux.
+for **HTTPS** configuration.  The process is similar on Mac or Linux.
 After installing OpenSSL, I will open OpenSSL and start generating key and cert files.
 
 ```
