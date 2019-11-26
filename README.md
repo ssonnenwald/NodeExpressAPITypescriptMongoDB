@@ -117,3 +117,9 @@ Create a new database called **CRMdb**.
 ![Create new database](https://github.com/ssonnenwald/NodeExpressAPITypescriptMongoDB/blob/master/images/Capture2.JPG)
 
 Create a new collection in the database called **contacts**.![Create new collection](https://github.com/ssonnenwald/NodeExpressAPITypescriptMongoDB/blob/master/images/Capture3.JPG)
+
+** Note:  After you setup MongoDB to connect to the database your connection URL will be whatever you used to connect in the setup.  In **lib/app.ts** change the line to match your connection.
+
+```typescript
+public mongoUrl: string = 'mongodb://localhost:27017/CRMdb';
+```
