@@ -1,9 +1,9 @@
 # Node Express API Typescript MongoDB
 
-[![fork this repo](http://githubbadges.com/fork.svg?user=ssonnenwald&repo=NodeExpressAPITypescriptMongoDB&style=flat)](https://github.com/ssonnenwald/NodeExpressAPITypescriptMongoDB/fork)
+[![GitHub forks](https://img.shields.io/github/forks/ssonnenwald/NodeExpressAPITypescriptMongoDB)](https://github.com/ssonnenwald/NodeExpressAPITypescriptMongoDB/network)
 ![commit activity](https://img.shields.io/github/commit-activity/w/ssonnenwald/NodeExpressAPITypescriptMongoDB.svg)
 ![last commit](https://img.shields.io/github/last-commit/ssonnenwald/NodeExpressAPITypescriptMongoDB.svg)
-![GitHub](https://img.shields.io/github/license/ssonnenwald/NodeExpressAPITypescriptMongoDB.svg)
+[![GitHub license](https://img.shields.io/github/license/ssonnenwald/NodeExpressAPITypescriptMongoDB)](https://github.com/ssonnenwald/NodeExpressAPITypescriptMongoDB/blob/master/LICENSE)
 ![GitHub issues](https://img.shields.io/github/issues/ssonnenwald/NodeExpressAPITypescriptMongoDB.svg)
 ![GitHub contributors](https://img.shields.io/github/contributors/ssonnenwald/NodeExpressAPITypescriptMongoDB.svg)
 
