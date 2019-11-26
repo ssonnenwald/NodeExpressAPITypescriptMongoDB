@@ -19,6 +19,48 @@ I will write more documentation about the project, but this is a VSCode project 
 
 This API is an example I made to demostrate CRUD operation using a very simple contact object.  So it will create new contact, update a contact, delete a contact and list the contacts.  Best way to understand the API is run the API and view the swagger documentation (<https://localhost:3000/swaggerui/).>
 
+## Requirements
+
+[NodeJS](https://nodejs.org/en/)
+
+Install global TypeScript and TypeScript Node
+
+```
+npm install -g typescript ts-node
+```
+
+## Getting Started
+
+You should install [MongoDB](https://docs.mongodb.com/manual/administration/install-community/) on your local machine.
+
+After that, you will have to replace the mongoURL with your MongoDB address in **lib/app.ts**.
+
+## Clone this repository
+
+```
+git clone https://github.com/ssonnenwald/NodeExpressAPITypescriptMongoDB.git
+```
+
+Then install the dependencies
+
+```
+npm install
+```
+
+## Start the server
+
+Run in development mode
+
+```
+npm run dev
+```
+
+Run in production mode 
+
+```
+npm run prod
+```
+
 ## Securing the API
 
 ### HTTPS
