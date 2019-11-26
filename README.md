@@ -31,7 +31,7 @@ OpenSSL> rsa -in keytemp.pem -out key.pem
 After that, we will move **key.pem** and **cert.pem** files to our
 project. They will be in the **config folder**.
 
-Then we will edit the **server.ts** file to enable https.
+Then we will edit the **server.ts** file to enable **https**.
 
 ```typescript
 import app from './app';
