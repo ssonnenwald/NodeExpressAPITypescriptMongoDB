@@ -116,4 +116,4 @@ Connect to the server.
 Create a new database called **CRMdb**.
 ![Create new database](https://github.com/ssonnenwald/NodeExpressAPITypescriptMongoDB/blob/master/images/Capture2.JPG)
 
-Create a new collection in the database called **contacts**.![Create new collection](https://github.com/ssonnenwald/NodeExpressAPITypescriptMongoDB/blob/master/images/Capture.JPG)
+Create a new collection in the database called **contacts**.![Create new collection](https://github.com/ssonnenwald/NodeExpressAPITypescriptMongoDB/blob/master/images/Capture3.JPG)
