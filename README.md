@@ -18,29 +18,33 @@ This API is an example I made to demostrate CRUD operation using a very simple c
 
 The first and foremost is that you should always use HTTPS over HTTP.
 
-For local testing, I will use [OpenSSL](https://slproweb.com/products/Win32OpenSSL.html) on Windows to generate the key and certificate for HTTPS configuration.  The process is similar on Mac or Linux.
+For local testing, I will use [OpenSSL](https://slproweb.com/products/Win32OpenSSL.html) on Windows to generate the key and certificate 
+for HTTPS configuration.  The process is similar on Mac or Linux.
 After installing OpenSSL, I will open OpenSSL and start generating key and cert files.
 
-    OpenSSL> req -newkey rsa:2048 -nodes -keyout keytemp.pem -x509 -days 365 -out cert.pem
+```
+OpenSSL> req -newkey rsa:2048 -nodes -keyout keytemp.pem -x509 -days 365 -out cert.pem
     
-    OpenSSL> rsa -in keytemp.pem -out key.pem
+OpenSSL> rsa -in keytemp.pem -out key.pem
+```
 
-After that, we will move **key.pem** and **cert.pem** files to our project. They will be in the **config folder**.
+After that, we will move **key.pem** and **cert.pem** files to our
+project. They will be in the **config folder**.
 
 Then we will edit the **server.ts** file to enable https.
 
-    ```typescript
-    import app from './app';
-    import * as https from 'https';
-    import * as fs from 'fs';
+```typescript
+import app from './app';
+import * as https from 'https';
+import * as fs from 'fs';
 
-    const PORT = 3000;
-    const httpsOptions = {
-        key: fs.readFileSync('./config/key.pem'),
-        cert: fs.readFileSync('./config/cert.pem')
-    }
+const PORT = 3000;
+const httpsOptions = {
+    key: fs.readFileSync('./config/key.pem'),
+    cert: fs.readFileSync('./config/cert.pem')
+}
 
-    https.createServer(httpsOptions, app).listen(PORT, () => {
-        console.log('Express server listening on port ' + PORT);
-    })
-    ```
+https.createServer(httpsOptions, app).listen(PORT, () => {
+    console.log('Express server listening on port ' + PORT);
+})
+```
