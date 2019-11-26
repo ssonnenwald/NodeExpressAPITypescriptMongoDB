@@ -103,3 +103,17 @@ https.createServer(httpsOptions, app).listen(PORT, () => {
     console.log('Express server listening on port ' + PORT);
 })
 ```
+
+## Database Setup - MongoDB
+
+Make sure you have also installed Compass for MongoDB, its the GUI to manage the database.  
+
+Start Compass
+![Connect to server](images/Capture.jpg)
+
+Connect to the server.
+
+Create a new database called **CRMdb**.
+![Create new database](images/Capture2.jpg)
+
+Create a new collection in the database called **contacts**.![Create new collection](images/Capture3.jpg)
