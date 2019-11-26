@@ -61,6 +61,12 @@ Run in production mode
 npm run prod
 ```
 
+## Testing over HTTPS
+
+The default URL is: **https://localhost:3000**
+
+The **key** and **cert** in the **config folder** is for testing purpose only. You should generate your own.
+
 ## Securing the API
 
 ### HTTPS
