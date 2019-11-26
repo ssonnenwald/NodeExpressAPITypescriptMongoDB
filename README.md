@@ -1,5 +1,12 @@
 # Node Express API Typescript MongoDB
 
+[![fork this repo](http://githubbadges.com/fork.svg?user=ssonnenwald&repo=NodeExpressAPITypescriptMongoDB&style=flat)](https://github.com/ssonnenwald/NodeExpressAPITypescriptMongoDB/fork)
+![commit activity](https://img.shields.io/github/commit-activity/w/ssonnenwald/NodeExpressAPITypescriptMongoDB.svg)
+![last commit](https://img.shields.io/github/last-commit/ssonnenwald/NodeExpressAPITypescriptMongoDB.svg)
+![GitHub](https://img.shields.io/github/license/ssonnenwald/NodeExpressAPITypescriptMongoDB.svg)
+![GitHub issues](https://img.shields.io/github/issues/ssonnenwald/NodeExpressAPITypescriptMongoDB.svg)
+![GitHub contributors](https://img.shields.io/github/contributors/ssonnenwald/NodeExpressAPITypescriptMongoDB.svg)
+
 ## General
 
 A Node Express API in Typescript with the MongoDB.
