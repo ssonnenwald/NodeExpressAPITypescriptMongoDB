@@ -161,7 +161,8 @@ I am using vscode to edit and debug the application.
     ],
     "exclude": [
         "node_modules",
-        "images"
+        "images",
+        "docs"
     ]
 }
 ```
