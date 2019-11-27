@@ -144,7 +144,7 @@ I am using vscode to edit and debug the application.
 * TSLint
 
 ## tsconfig.json
-```json
+```yaml
 {
     "compilerOptions": {
         "module": "commonjs",
@@ -174,7 +174,7 @@ This is the standard setup for a node project.  What I added in addition here is
 I added this so that my **lib/swagger.json** file would be picked up and validated against for my API documentation since I added swagger to the project.
 
 ## launch.json
-```json
+```yaml
 "version": "0.2.0",
 "configurations": [
     {
